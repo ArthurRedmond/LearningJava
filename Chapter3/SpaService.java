@@ -4,6 +4,11 @@
 
 public class SpaService
 {
+    public SpaService()
+    {
+        serviceDesctiption = "---";
+        price = 0;
+    }
     private String serviceDesctiption;
     private double price;
 

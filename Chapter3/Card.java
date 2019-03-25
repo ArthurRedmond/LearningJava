@@ -7,9 +7,9 @@ public class Card
     private char cardSuit;
     private int cardValue;
 
-    public void setCardSuit(char suit)
+    public void setCardSuit(char cardSuit)
     {
-        cardSuit = suit;
+        this.cardSuit = cardSuit;
     }
     public char getCardSuit()
     {
@@ -17,7 +17,7 @@ public class Card
     }
     public void setCardValue(int RandomInt)
     {
-        cardValue = RandomInt;
+        this.cardValue = RandomInt;
     }
     public int getCardValue()
     {

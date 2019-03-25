@@ -4,20 +4,20 @@
 
 public class Card
 {
-    private char suit;
+    private char cardSuit;
     private int cardValue;
 
-    public void setSuit(char suit)
+    public void setCardSuit(char suit)
     {
-        // Code
+        cardSuit = suit;
     }
-    public char getSuit()
+    public char getCardSuit()
     {
-        return suit;
+        return cardSuit;
     }
-    public void setCardValue()
+    public void setCardValue(int RandomInt)
     {
-        // Code
+        cardValue = RandomInt;
     }
     public int getCardValue()
     {

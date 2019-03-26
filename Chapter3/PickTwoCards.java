@@ -11,21 +11,19 @@ public class PickTwoCards
         Card firstCard = new Card();
         firstCard.setCardSuit('s');
         System.out.println("First card suit: " + firstCard.getCardSuit()); 
-        firstCard.setCardValue(getData(0));
+        firstCard.setCardValue(getData());
         System.out.println("First card value: " + firstCard.getCardValue());
         Card secondCard = new Card();
         secondCard.setCardSuit('d');
         System.out.println("\nSecond card suit: " + firstCard.getCardSuit()); 
-        secondCard.setCardValue(getData(1));
+        secondCard.setCardValue(1);
         System.out.println("Second card value: " + firstCard.getCardValue());
-        //Scanner keyboard = new Scanner(System.in);
-        //firstCard = getData(firstCard);
-        //secondCard = getData(secondCard);
     }
-    public static int getData(int RandomInt)
+    public static int getData()
     {
+        int MyValue;
         final int CARDS_IN_SUIT = 13;
-        RandomInt = ((int)(Math.random() * 100) % CARDS_IN_SUIT + 1);
-        return RandomInt;
+        MyValue = ((int)(Math.random() * 100) % CARDS_IN_SUIT + 1);
+        return MyValue;
     }
 }

@@ -6,7 +6,7 @@ public class PickTwoCards2
     Card2 secondCard = new Card2();
     firstCard = getData(firstCard);
     secondCard = getData(secondCard);
-    System.out.println("Your first card is the " + firstCard.getCardSuit() + " of " + firstCard.getCardSuit());
+    System.out.println("Your first card is the " + firstCard.getCardValue() + " of " + firstCard.getCardSuit());
     System.out.println("Your second card is the " + secondCard.getCardValue() + " of " + secondCard.getCardSuit());
   }
   public static Card2 getData(Card2 data)

@@ -6,6 +6,7 @@ public class Card
 {
     private char cardSuit;
     private int cardValue;
+    private int RandomInt;
 
     public void setCardSuit(char cardSuit)
     {

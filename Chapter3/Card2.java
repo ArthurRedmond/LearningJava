@@ -9,7 +9,7 @@ public class Card2
   }
   public char getCardSuit()
   {
-    return suit;
+    return cardSuit;
   }
   public void setCardValue(int myValue)
   {

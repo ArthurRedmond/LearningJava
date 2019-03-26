@@ -22,8 +22,10 @@ public class PickTwoCards
     public static int getData()
     {
         int MyValue;
+        
         final int CARDS_IN_SUIT = 13;
         MyValue = ((int)(Math.random() * 100) % CARDS_IN_SUIT + 1);
         return MyValue;
     }
 }
+

@@ -1,4 +1,8 @@
-public class Card2
+// Filename Card.java
+// Written by Arthur Redmond
+// Written on 2019-03-26
+
+public class Card
 {
   private char cardSuit;
   private int cardValue;

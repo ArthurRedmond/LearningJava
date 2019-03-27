@@ -1,15 +1,19 @@
-public class PickTwoCards2
+// Filename PickTwoCards.java
+// Written by Arthur Redmond
+// Written on 2019-03-26
+
+public class PickTwoCards
 {
   public static void main(String[] args)
   {
-    Card2 firstCard = new Card2();
-    Card2 secondCard = new Card2();
+    Card firstCard = new Card();
+    Card secondCard = new Card();
     firstCard = getData(firstCard);
     secondCard = getData(secondCard);
     System.out.println("Your first card is the " + firstCard.getCardValue() + " of " + firstCard.getCardSuit());
     System.out.println("Your second card is the " + secondCard.getCardValue() + " of " + secondCard.getCardSuit());
   }
-  public static Card2 getData(Card2 data)
+  public static Card getData(Card data)
   {
     char suit;
     int myValue;

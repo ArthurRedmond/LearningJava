@@ -1,7 +1,3 @@
-// Filename SpaService.java
-// Written by Arthur Redmond
-// Written on 2019-03-21
-
 public class SpaService
 {
     public SpaService()

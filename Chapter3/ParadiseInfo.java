@@ -1,7 +1,3 @@
-// Filename ParadiseInfo.java
-// Written by Arthur Redmond
-// Written on 2019-03-21
-
 public class ParadiseInfo
 {
     public static void main(String[] args)

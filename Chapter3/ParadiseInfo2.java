@@ -1,7 +1,3 @@
-// Filename ParadiseInfo2.java
-// Written by Arthur Redmond
-// Written on 2019-03-21
-
 import java.util.Scanner;
 
 public class ParadiseInfo2

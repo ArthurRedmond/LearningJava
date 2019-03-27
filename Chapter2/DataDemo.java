@@ -1,7 +1,3 @@
-// Filename DataDemo.java
-// Written by Arthur Redmond
-// Written on 2019-03-19
-
 public class DataDemo
 {
     public static void main(String[] args)

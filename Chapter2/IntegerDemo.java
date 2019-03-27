@@ -1,7 +1,3 @@
-// Filename IntegerDemo.java
-// Written by Arthur Redmond
-// Written on 2019-03-19
-
 public class IntegerDemo
 {
     public static void main(String[] args)

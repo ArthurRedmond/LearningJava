@@ -18,7 +18,7 @@ public class PickTwoCards
     char suit;
     int myValue;
     data.setCardSuit('S');
-        final int CARDS_IN_SUIT = 13;
+    final int CARDS_IN_SUIT = 13;
     myValue = ((int)(Math.random() * 100) % CARDS_IN_SUIT +1);
     data.setCardValue(myValue);
     return data;

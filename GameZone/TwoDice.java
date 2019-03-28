@@ -8,6 +8,8 @@ public class TwoDice
     {
         Die firstDie = new Die();
         Die secondDie = new Die();
-        System.out.println(firstDie.getDieValue());
+        System.out.println("Throwing dice...");
+        System.out.println("Die number one: " + firstDie.getDieValue());
+        System.out.println("Die number two: " + secondDie.getDieValue());
     }
 }

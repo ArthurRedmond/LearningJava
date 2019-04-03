@@ -12,7 +12,7 @@ public class BankBalanceByRateAndYear
         final double INCREMENT = 0.01;
         final int MAX_YEAR = 4;
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Ente initial bank balance > ");
+        System.out.print("Ente initial bank balance > ");
         initialBalance = keyboard.nextDouble();
         keyboard.nextLine();
         for(interest = LOW; interest <= HIGH; interest += INCREMENT)

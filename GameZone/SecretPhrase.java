@@ -2,13 +2,10 @@
 // Written by Arthur Redmond
 // Written on 2019-04-09
 
-import java.util.Objects;
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner6;
-public class SecretPhrase{
-
-    
+public class SecretPhrase
+{
     private final static String SECRET_PHRASE = "Horse Feathers";
     
     public static void main(String[] args)
@@ -21,18 +18,19 @@ public class SecretPhrase{
 
         while(!gameOver)
         {
-            int stringLength;
-            stringLength = SECRET_PHRASE.length();
-            System.out.println("The secret phrase is " + gameString);
+            System.out.println("\nThe secret phrase is " + gameString);
             playerGuess = nextTurn();
             for(int i = 0; i < SECRET_PHRASE.length(); i++)
             {
                 if(SECRET_PHRASE.charAt(i) == playerGuess)
-                {
                     gameString.setCharAt(i, playerGuess);
-                }
+                
+                if(SECRET_PHRASE.toString().equals(gameString.toString()))
+                    gameOver = true;
             }
         }
+        System.out.println("\nThe secret phrase was " + gameString + "!!!");
+        System.out.println("You won!");
     }
     public static char nextTurn()
     {

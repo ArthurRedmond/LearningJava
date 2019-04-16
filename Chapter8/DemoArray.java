@@ -1,6 +1,6 @@
 public class DemoArray
 {
-  publc static void main(String[] args)
+  public static void main(String[] args)
   {
     double[] salaries = new double[4];
     salaries[0] = 12.25;

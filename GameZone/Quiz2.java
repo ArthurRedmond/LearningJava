@@ -43,22 +43,28 @@ public class Quiz2
 
     String correct = "Correct!";
     String incorrect = "The correct answer is ";
-   
+  
     for(int i = 0; i < questions.length; i++){
       System.out.println(questions[i].prompt);
+      System.out.print("Enter A B or C >> ");
       Scanner input = new Scanner(System.in);
-      String playerGuess = input.nextLine();
-      playerGuess.toUpperCase();
-      if(playerGuess.equals("A") || playerGuess.equals("B") || playerGuess.equals("C")){
+      String playerGuess = input.nextLine().toUpperCase();
+      System.out.println();
+      if(playerGuess.equals("A") || playerGuess.equals("B") || playerGuess.equals("C"))
+      {
         if(playerGuess.equals(questions[i].answer))
         {
-          System.out.println(correct);
+          System.out.println(correct + "\n");
         }
         else
         {
-          System.out.println(incorrect + questions[i].answer);
-        }             
+          System.out.println(incorrect + questions[i].answer + "\n");
+        }     
       }
+      else 
+        {
+          i--;
+        }        
     }
   }
 }

@@ -40,44 +40,32 @@ public class Quiz
       new QuizQuestion(question9, "A"),
       new QuizQuestion(question10, "B")
     };
-    int score = 0;
+
     String correct = "Correct!";
     String incorrect = "The correct answer is ";
-   
-
-    for(int i = 0; i < questions.length; i++){
-      System.out.println(questions[i].prompt);
-      Scanner input = new Scanner(System.in);
-      String answer = input.nextLine();
-      if(answer.equals(questions[i].answer)){
-        score++;
-      }
-    }
-    System.out.println("You got " + score + "/" + questions.length);
-  }
-}
   
-/*   public static void Quiz(QuizQuestion [] questions)
-  {
-    int score = 0;
-    String correct = "Correct!";
-    String incorrect = "The correct answer is ";
-    Scanner input = new Scanner(System.in);
-
-    for(int i = 0; i < questions.length; i++)
-      System.out.println(questions[i].prompt);
-      String answer = input.nextLine();
-      if(answer.equals(questions[i])){
-        score++;
-      }
-      System.out.println("You got " + score + "/" + questions.length); 
-      guess.toUpperCase();
-       if(guess.equals("A") || guess.equals("B") || guess.equals("C"))
-        if(guess.equals(questions[i].answer))
+    for(int i = 0; i < questions.length; i++){
+      System.out.println(questions[i].question);
+      System.out.print("Enter A B or C >> ");
+      Scanner input = new Scanner(System.in);
+      String playerGuess = input.nextLine().toUpperCase();
+      System.out.println();
+      if(playerGuess.equals("A") || playerGuess.equals("B") || playerGuess.equals("C"))
+      {
+        if(playerGuess.equals(questions[i].answer))
         {
-          System.out.println(correct);
+          System.out.println(correct + "\n");
         }
         else
         {
-          System.out.println(incorrect + questions[i].answer);
-        }*/
+          System.out.println(incorrect + questions[i].answer + "\n");
+        }     
+      }
+      else 
+        {
+          System.out.println("Please only enter \"A\", \"B\", or \"C\"\n");
+          i--;
+        }        
+    }
+  }
+}

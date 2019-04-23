@@ -1,4 +1,4 @@
-// Filename Qustions.java
+// Filename QuizQustion.java
 // Written by Arthur Redmond
 // Written on 2019-04-16
 

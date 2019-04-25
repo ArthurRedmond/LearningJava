@@ -1,3 +1,7 @@
+// Filename Martian.java
+// Written by Arthur Redmond
+// Written on 2019-04-24
+
 public class Martian extends Alien
 {
   public Martian(String species, int eyes, String col, int ht)

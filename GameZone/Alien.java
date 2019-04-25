@@ -1,4 +1,8 @@
-public class Alien
+// Filename Alien.java
+// Written by Arthur Redmond
+// Written on 2019-04-24
+
+public abstract class Alien
 {
   protected String alienSpecies;
   protected int numberOfEyes;

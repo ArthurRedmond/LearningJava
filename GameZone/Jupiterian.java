@@ -1,3 +1,7 @@
+// Filename Jupiterian.java
+// Written by Arthur Redmond
+// Written on 2019-04-24
+
 public class Jupiterian extends Alien
 {
   int numberOfHeads;

@@ -6,7 +6,7 @@ public class Jupiterian extends Alien
     super(species, eyes, col, ht);
     numberOfHeads = heads;
   }
-  @Override
+  
   public void display()
   {
     System.out.println("\nA " + alienSpecies + " alien has just materialized!" +

@@ -1,110 +1,69 @@
 // Filename QuizUsingFile.java
 // Written by Arthur Redmond
-// Written on 2019-05-04
+// Written on 2019-05-01
 
 import java.nio.file.*;
 import java.io.*;
-import java.nio.channels.FileChannel;
 import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+
 import static java.nio.file.StandardOpenOption.*;
-import java.util.Scanner;
 import java.util.*;
+
 public class QuizUsingFile
 {
-  public static void CreateHighScores()
-  {
-    File checkFile = new File("HighScores.txt");
-    if(!(checkFile.exists()))
-    {
-      Path file = Paths.get("HighScores.txt");
-      String s = "00,  " + System.getProperty("line.separator");
-      final int NUMRECS = 10;
-      try
-      {
-        OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE));
-        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
-        for(int count = 0; count < NUMRECS; ++count)
-          writer.write(s, 0, s.length());
-        writer.close();
-      }
-      catch(Exception e)
-      {
-        System.out.println("Error message: " + e);
-      }
-    }
-  }
-  public static void DispalyHighScores()
+  public static void main(String[] args)
   {
     Path file = Paths.get("HighScores.txt");
-    String[] array = new String[1];
-    String s = "";
-    String delimiter = ",";
-    int HighScore;
+    String s = "00,   " + System.getProperty("line.separator");
+    byte[] data = s.getBytes();
+    ByteBuffer buffer = ByteBuffer.wrap(data);
+    final int NUMRECS = 11;
+    Scanner keyboard = new Scanner(System.in);
     String name;
+    System.out.print("Please enter your initials >> ");
+    name = keyboard.nextLine();
     try
     {
+      OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, READ, WRITE));
+      BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
+      for(int count = 0; count < NUMRECS; ++count)
+        writer.write(s, 0, s.length());
+      writer.close();
+    }
+    catch(Exception e)
+    {
+      System.out.println("Error message: " + e);
+    }
+    String[] array = new String[1];
+    int score;
+    String stringScore;
+    String delimeter = ",";
+    String player;
+    try
+    {
+      System.out.println("*** High Scores ***");
       InputStream input = new BufferedInputStream(Files.newInputStream(file));
       BufferedReader reader = new BufferedReader(new InputStreamReader(input));
       System.out.println();
       s = reader.readLine();
-      System.out.println("*** HIGH SCORES ***");
       while(s != null)
       {
-        array = s.split(delimiter);
-        HighScore = Integer.parseInt(array[0]);
-        if(HighScore != 0)
-        {
-          name = array[1];
-          System.out.println("Score: " + HighScore + " " + name);
-        }
-        s = reader.readLine();
+        array = s.split(delimeter);
+        stringScore = array[0];
+        score = Integer.parseInt(array[0]);
+        player = array[1];
+        s = reader.readLine();      
       }
       reader.close();
-      System.out.println();
     }
     catch(Exception e)
     {
-      System.out.println("Error message: " + e);
+      System.out.println("Message: " + e);
     }
-  }
- 
-  public static void WriteToFile(String nam, int tall)
-  {
-    Path file = Paths.get("HighScores.txt");
-    String s = "00,  " + System.getProperty("line.separator");
-    final int RECSIZE = s.length();
-    FileChannel fc = null;
-    String delimiter = ",";
-    String tallyString;
-    int tally = tall;
-    String name = nam;
-
-    try
-    {
-      
-      fc = (FileChannel)Files.newByteChannel(file, READ, WRITE);
-      tallyString = Integer.toString(tally);
-      s = tallyString + delimiter + name + System.getProperty("line.separator");
-      byte[] data = s.getBytes();
-      ByteBuffer buffer = ByteBuffer.wrap(data);
-      fc.position(tally * RECSIZE);
-      fc.write(buffer);
-      fc.close();
-    }
-    catch(Exception e)
-    {
-      System.out.println("Error message: " + e);
-    }
-  }
-  public static void main(String[] args)
-  {
-    Scanner keyboard = new Scanner(System.in);
-    System.out.print("Enter your initials >> ");
-    String name = keyboard.nextLine();
+        
+    int tally = 0;
     
-    CreateHighScores();
-    DispalyHighScores();
-
     String question1 = "How many days are in April?\n" +
       "A: 28\nB: 30\nC: 31";
     String question2 = "Who was the first president of the United Sates?\n" +
@@ -141,8 +100,7 @@ public class QuizUsingFile
 
     String correct = "Correct!";
     String incorrect = "The correct answer is ";
-    int tally = 0;
-  
+      
     for(int i = 0; i < questions.length; i++){
       System.out.println(questions[i].question);
       System.out.print("Enter A B or C >> ");
@@ -159,14 +117,13 @@ public class QuizUsingFile
         {
           if(playerGuess.equals(questions[i].answer))
           {
-            System.out.println(correct);
+            System.out.println(correct + "\n");
             ++tally;
           }
           else
           {
-            System.out.println(incorrect + questions[i].answer);
-          }  
-          System.out.println("Your score is: " + tally + "\n");   
+            System.out.println(incorrect + questions[i].answer + "\n");
+          }     
         }
       }
       catch(InvalidAnswerChoiceExcpetion e)
@@ -175,6 +132,6 @@ public class QuizUsingFile
         --i;
       }
     }
-    WriteToFile(name, tally);
+    System.out.println("Your score is: " + tally);
   }
 }
